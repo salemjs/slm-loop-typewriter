@@ -1,7 +1,7 @@
 {
     "name": "slm-loop-typewriter",
     "version": "1.0.0",
-    "description": "Lean (~330byte min+gzip) and easy to use vanilla js web components to add typewriter effect to your texts",
+    "description": "This lean (332byte min+gzip) and easy-to-use vanilla js web component will add a looping typewriter effect to your texts",
     "main": "src/typewriter.js",
     "module": "src/typewriter.js",
     "directories": {

@@ -1,3 +1,0 @@
-[submodule "src/util-typewriter"]
-	path = src/util-typewriter
-	url = git@github.com:salemjs/util-typewriter.git

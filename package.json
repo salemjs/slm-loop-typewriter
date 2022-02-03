@@ -1,0 +1,51 @@
+{
+    "name": "slm-loop-typewriter",
+    "version": "1.0.0",
+    "description": "Lean (~330byte min+gzip) and easy to use vanilla js web components to add typewriter effect to your texts",
+    "main": "src/typewriter.js",
+    "module": "src/typewriter.js",
+    "directories": {
+        "src": "src"
+    },
+    "keywords": [
+        "component",
+        "client",
+        "browser",
+        "ui"
+    ],
+    "scripts": {
+        "fix:js": "eslint --fix ./src/",
+        "fix:format": "prettier --write .",
+        "lint": "eslint ./src/",
+        "minify:js": "terser --config-file .terser.json ./dist/slm-loop-typewriter.js -o ./dist/slm-loop-typewriter.min.js --source-map",
+        "minify:css": "css-minify --file ./dist/slm-loop-typewriter.css --output ./dist/",
+        "prebuild": "npm run lint",
+        "build:js": "rollup --config rollup.config.js && npm run minify:js",
+        "build:css": "cp ./src/typewriter.css ./dist/slm-loop-typewriter.css && npm run minify:css",
+        "build": "run-s build:js build:css",
+        "postbuild:js": "cp ./dist/slm-loop-typewriter.min.js ./examples/slm-loop-typewriter.min.js",
+        "postbuild:css": "cp ./dist/slm-loop-typewriter.min.css ./examples/slm-loop-typewriter.min.css",
+        "postbuild": "run-s postbuild:js postbuild:css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/salemjs/slm-loop-typewriter.git"
+    },
+    "author": "Sandor Huszagh <support@salemjs.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/salemjs/slm-loop-typewriter/issues",
+        "email": "support@salemjs.com"
+    },
+    "homepage": "https://salemjs.com",
+    "devDependencies": {
+        "css-minify": "^2.0.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.24.2",
+        "npm-run-all": "^4.1.5",
+        "prettier": "2.3.2",
+        "rollup": "^2.56.3",
+        "terser": "^5.7.2"
+    }
+}
